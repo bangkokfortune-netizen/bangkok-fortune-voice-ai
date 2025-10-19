@@ -2,10 +2,10 @@
   "$schema": "https://railway.app/railway.schema.json",
   "build": {
     "builder": "NIXPACKS",
-    "buildCommand": "corepack enable && corepack prepare pnpm@latest --activate && pnpm install && pnpm build"
+    "buildCommand": "npx pnpm@latest install && npx pnpm@latest build"
   },
   "deploy": {
-    "startCommand": "pnpm start",
+    "startCommand": "npx pnpm@latest start",
     "restartPolicyType": "ON_FAILURE",
     "restartPolicyMaxRetries": 10
   },
