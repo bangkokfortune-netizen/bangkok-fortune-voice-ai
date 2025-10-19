@@ -1,0 +1,37 @@
+{
+  "name": "@bangkok-fortune/brain",
+  "version": "1.0.0",
+  "description": "GPT-5 NLP engine with tool-use for Square Appointments, FAQs, and bilingual policy handling",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "test": "vitest",
+    "lint": "eslint src --ext .ts",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "openai": "^4.24.1",
+    "zod": "^3.22.4",
+    "pino": "^8.17.2",
+    "js-yaml": "^4.1.0",
+    "date-fns": "^3.0.6",
+    "date-fns-tz": "^2.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@types/js-yaml": "^4.0.9",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3",
+    "vitest": "^1.1.0",
+    "eslint": "^8.56.0",
+    "@typescript-eslint/eslint-plugin": "^6.17.0",
+    "@typescript-eslint/parser": "^6.17.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
