@@ -1,0 +1,38 @@
+{
+  "name": "@bangkok-fortune/integrations",
+  "version": "1.0.0",
+  "description": "Square Appointments, Twilio, LINE OA, and Make.com integration clients",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "test": "vitest",
+    "lint": "eslint src --ext .ts",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "square": "^33.0.0",
+    "twilio": "^4.20.0",
+    "@line/bot-sdk": "^8.3.0",
+    "axios": "^1.6.5",
+    "pino": "^8.17.2",
+    "zod": "^3.22.4",
+    "date-fns": "^3.0.6",
+    "date-fns-tz": "^2.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3",
+    "vitest": "^1.1.0",
+    "eslint": "^8.56.0",
+    "@typescript-eslint/eslint-plugin": "^6.17.0",
+    "@typescript-eslint/parser": "^6.17.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
