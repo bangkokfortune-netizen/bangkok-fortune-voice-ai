@@ -2,10 +2,10 @@
   "$schema": "https://railway.app/railway.schema.json",
   "build": {
     "builder": "NIXPACKS",
-    "buildCommand": "npx pnpm@latest install && npx pnpm@latest build"
+    "buildCommand": "npx pnpm@latest install && npx pnpm --filter @bangkok-fortune/voice-gateway build"
   },
   "deploy": {
-    "startCommand": "npx pnpm@latest start",
+    "startCommand": "npx pnpm --filter @bangkok-fortune/voice-gateway start",
     "restartPolicyType": "ON_FAILURE",
     "restartPolicyMaxRetries": 10
   },
