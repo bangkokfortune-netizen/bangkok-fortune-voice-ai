@@ -1,0 +1,129 @@
+# ==============================================================================
+# Bangkok Fortune Thai Massage & Waxing Spa - Business Configuration
+# ==============================================================================
+# This file contains owner-trainable content for the voice AI receptionist.
+# Modify values here to update business information, services, and policies.
+# NO CODE CHANGES REQUIRED - the AI will read this file at runtime.
+
+brand: "Bangkok Fortune Thai Massage & Waxing Spa"
+
+address:
+  street: "307 7th Ave, 16th Floor"
+  city: "New York"
+  state: "NY"
+  zip: "10001"
+  full: "307 7th Ave, 16th Floor, New York, NY 10001"
+
+lobby_instruction: |
+  At the lobby, tell the doorman you're here for Bangkok Fortune Massage.
+  Please wait in the lobby, and our staff will escort you up.
+
+contact:
+  phone: "+1 (929) XXX-XXXX"  # Update with actual phone
+  email: "info@bangkokfortunenyc.com"  # Update with actual email
+  website: "https://bangkokfortunenyc.com"  # Update with actual website
+
+services:
+  - name: "Thai Massage"
+    description: "Traditional Thai massage with stretching and pressure techniques"
+    durations: [60, 90]
+    prices:
+      60: 80
+      90: 120
+    staff_gender_preference: true
+  
+  - name: "Deep Tissue"
+    description: "Therapeutic massage targeting muscle tension and knots"
+    durations: [60, 90]
+    prices:
+      60: 90
+      90: 130
+    staff_gender_preference: true
+  
+  - name: "Swedish"
+    description: "Relaxing massage with gentle, flowing strokes"
+    durations: [60, 90]
+    prices:
+      60: 80
+      90: 120
+    staff_gender_preference: true
+  
+  - name: "Waxing"
+    description: "Professional waxing services"
+    durations: [30, 60]
+    prices:
+      30: 50
+      60: 90
+    staff_gender_preference: false
+
+policies:
+  cancellation: |
+    Free reschedule or cancellation up to 6 hours before appointment.
+    Late cancellations or no-shows may incur a fee.
+  
+  payment: |
+    Credit card on file may be required to secure bookings.
+    We accept all major credit cards, cash, and digital payments.
+  
+  first_time_client: |
+    First-time clients: Please arrive 10 minutes early to complete intake forms.
+  
+  tips: "Gratuity is appreciated but not required. Standard is 15-20%."
+
+hours:
+  monday:    { open: "10:00", close: "22:00" }
+  tuesday:   { open: "10:00", close: "22:00" }
+  wednesday: { open: "10:00", close: "22:00" }
+  thursday:  { open: "10:00", close: "22:00" }
+  friday:    { open: "10:00", close: "23:00" }
+  saturday:  { open: "10:00", close: "23:00" }
+  sunday:    { open: "11:00", close: "21:00" }
+
+language:
+  default: "auto"  # auto-detect from customer speech
+  supported: ["th", "en"]
+  
+  thai_tone: "สุภาพ เป็นกันเอง กระชับ"  # Polite, friendly, concise
+  english_tone: "Warm, concise, professional"
+  
+  greetings:
+    th: "สวัสดีค่ะ ยินดีต้อนรับสู่ บางกอก ฟอร์จูน ค่ะ"
+    en: "Hello! Thank you for calling Bangkok Fortune. How may I help you today?"
+
+reporting:
+  daily_time_et: "22:30"
+  send_to: "${OWNER_ALERT_PHONE}"  # Uses env var
+  include:
+    - total_calls
+    - bookings_made
+    - estimated_revenue
+    - no_shows
+    - missed_calls
+  format: "sms"  # or "email" when configured
+
+faq:
+  - question: "What should I wear?"
+    answer_th: "ใส่ชุดสบายๆ ค่ะ เราจะให้ชุดเปลี่ยนสำหรับนวดค่ะ"
+    answer_en: "Wear comfortable clothing. We provide a change of clothes for your massage."
+  
+  - question: "Do you offer couple's massage?"
+    answer_th: "มีค่ะ เราจัดห้องคู่สำหรับนวดคู่ได้ค่ะ"
+    answer_en: "Yes, we can arrange side-by-side massage in a couples room."
+  
+  - question: "Is parking available?"
+    answer_th: "มีที่จอดรถใกล้ๆ ค่ะ แต่แนะนำให้ใช้ขนส่งสาธารณะหรือรถแท็กซี่ค่ะ"
+    answer_en: "Street parking is available nearby. We recommend public transit or taxi for convenience."
+  
+  - question: "What payment methods do you accept?"
+    answer_th: "รับบัตรเครดิต เงินสด และ Venmo/Zelle ค่ะ"
+    answer_en: "We accept all major credit cards, cash, Venmo, and Zelle."
+
+escalation:
+  conditions:
+    - "Customer requests manager or supervisor"
+    - "Complex medical/health questions"
+    - "Complaint or service issue"
+    - "Request for refund or credit"
+  action: "collect_callback"
+  message_th: "เข้าใจค่ะ ขอให้ผู้จัดการโทรกลับให้คุณได้ไหมคะ"
+  message_en: "I understand. May I have our manager call you back?"
