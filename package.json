@@ -1,0 +1,42 @@
+{
+  "name": "bangkok-fortune-voice-ai",
+  "version": "1.0.0",
+  "description": "Production-grade bilingual Thai/English AI voice receptionist for NYC spa",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "pnpm -r --parallel dev",
+    "build": "pnpm -r build",
+    "start": "pnpm -r --parallel start",
+    "test": "pnpm -r test",
+    "lint": "pnpm -r lint",
+    "typecheck": "pnpm -r typecheck",
+    "clean": "pnpm -r clean && rm -rf node_modules",
+    "deploy:railway": "railway up"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bangkokfortune-netizen/bangkok-fortune-voice-ai"
+  },
+  "keywords": [
+    "voice-ai",
+    "twilio",
+    "openai",
+    "square",
+    "appointments",
+    "bilingual",
+    "thai",
+    "receptionist"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.3"
+  }
+}
