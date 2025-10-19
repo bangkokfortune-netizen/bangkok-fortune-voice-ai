@@ -10,16 +10,16 @@
     "lint": "eslint src --ext .ts"
   },
   "dependencies": {
-    "express": "^4.19.2",
-    "ws": "^8.15.1",
-    "axios": "^1.7.4",
-    "openai": "^4.0.0",
-    "elevenlabs": "^1.59.0",
-    "dotenv": "^16.4.5",
-    "pino": "^9.3.0",
-    "cors": "^2.8.5",
-    "body-parser": "^1.20.3",
-    "uuid": "^9.0.1"
+  "express": "^4.19.2",
+  "ws": "^8.15.1",
+  "axios": "^1.7.4",
+  "openai": "^4.0.0",
+  "elevenlabs": "^2.0.0",
+  "dotenv": "^16.4.5",
+  "pino": "^9.3.0",
+  "cors": "^2.8.5",
+  "body-parser": "^1.20.3",
+  "uuid": "^9.0.1"
   },
   "devDependencies": {
     "@types/node": "^20.12.12",
