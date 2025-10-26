@@ -3,11 +3,10 @@
   "version": "1.0.1",
   "description": "Production-grade bilingual Thai/English AI voice receptionist for NYC spa",
   "private": true,
-  "main": "src/index.ts",
-  "type": "module",
+  "main": "dist/index.js",
   "scripts": {
     "dev": "NODE_ENV=development tsx watch src/index.ts",
-    "start": "NODE_ENV=production tsx src/index.ts",
+    "start": "NODE_ENV=production node dist/index.js",
     "build": "tsc",
     "typecheck": "tsc --noEmit",
     "clean": "rm -rf node_modules logs/*.log",
