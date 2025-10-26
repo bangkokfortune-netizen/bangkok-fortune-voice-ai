@@ -1,6 +1,6 @@
 {
   "name": "bangkok-fortune-voice-ai",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Production-grade bilingual Thai/English AI voice receptionist for NYC spa",
   "private": true,
   "main": "src/index.js",
