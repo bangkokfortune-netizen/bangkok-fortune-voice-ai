@@ -2,7 +2,7 @@ import Fastify from 'fastify';
 import websocket from '@fastify/websocket';
 import cors from '@fastify/cors';
 import { pino } from 'pino';
-import { WebSocketHandler } from './ws/handler';
+import { createRealtimeBridge } from './realtime-bridge';
 import { config } from './config';
 import { redactPII } from './utils/redact';
 
@@ -72,31 +72,17 @@ app.register(async function (fastify) {
     activeConnections++;
     
     logger.info({ callId, remoteAddress: request.ip }, 'New WebSocket connection');
-
-    const handler = new WebSocketHandler({
-      callId,
-      logger: logger.child({ callId }),
-      config,
-    });
-
-    connection.socket.on('message', async (message: Buffer) => {
-      try {
-        const data = JSON.parse(message.toString());
-        await handler.handleMessage(data, connection.socket);
-      } catch (error) {
-        logger.error({ callId, error }, 'WebSocket message error');
-      }
-    });
-
+    
+    // Use the OpenAI Realtime bridge instead of the old handler
+    createRealtimeBridge(connection.socket, request);
+    
     connection.socket.on('close', () => {
       activeConnections--;
-      handler.cleanup();
       logger.info({ callId }, 'WebSocket connection closed');
     });
 
     connection.socket.on('error', (error) => {
       logger.error({ callId, error }, 'WebSocket error');
-      handler.cleanup();
     });
   });
 });
